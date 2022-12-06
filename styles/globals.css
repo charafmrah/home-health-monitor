@@ -1,9 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 html {
-  @apply font-sans antialiased bg-gray-900 text-slate-100 ;
+  @apply bg-gray-900 text-slate-100 font-Inter;
 }
 
 h1 {
