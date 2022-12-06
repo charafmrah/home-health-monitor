@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 html {
-  @apply  bg-gray-900  text-slate-100  font-sans  antialiased  ;
+  @apply  font-sans antialiased bg-gray-900 text-slate-100 ;
 }
 
 
