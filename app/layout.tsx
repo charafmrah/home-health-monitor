@@ -11,7 +11,7 @@ export default function RootLayout({
       <head />
       <body>
         <main>
-          <nav>
+          <nav className="flex gap-5">
             <Link href="/">Dashboard</Link>
             <Link href="/account">Account</Link>
           </nav>

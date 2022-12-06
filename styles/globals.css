@@ -3,7 +3,15 @@
 @tailwind utilities;
 
 html {
-  @apply  font-sans antialiased bg-gray-900 text-slate-100 ;
+  @apply font-sans antialiased bg-gray-900 text-slate-100 ;
+}
+
+h1 {
+  @apply text-4xl font-bold;
+}
+
+p {
+  @apply text-lg;
 }
 
 
