@@ -15,7 +15,7 @@
     <a href="https://github.com/charafmrah/home-health-monitor"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/charafmrah/home-health-monitor-device">ESP8266 Code</a>
+    <a href="https://github.com/charafmrah/home-health-monitor-device">Device Code</a>
     ·
     <a href="https://github.com/charafmrah/home-health-monitor/issues">Report Bug</a>
     ·
