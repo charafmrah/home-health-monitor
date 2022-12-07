@@ -9,7 +9,7 @@ html {
 }
 
 body {
-  @apply px-5 lg:px-20; 
+  @apply  px-5 lg:px-20; 
 }
 
 h1 {

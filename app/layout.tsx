@@ -13,7 +13,7 @@ export default function RootLayout({
       <body>
         <main>
           <div className="flex items-center justify-between py-5 mb-10 ">
-            <Image src="/logo.svg" width={50} height={50} />
+            <Image src="/logo.svg" width={50} height={50} alt="" />
             <nav className="flex gap-5 text-2xl font-semibold align-middle ">
               <Link href="/">Dashboard</Link>
               <Link href="/account">Account</Link>

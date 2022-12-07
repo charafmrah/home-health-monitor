@@ -27,13 +27,13 @@
 	}
 }
 
-.blob.green {
+.blob.online {
   background: rgba(51, 217, 178, 1);
   box-shadow: 0 0 0 0 rgba(51, 217, 178, 1);
-  animation: pulse-green 2s infinite;
+  animation: pulse-online 2s infinite;
 }
 
-@keyframes pulse-green {
+@keyframes pulse-online {
   0% {
     transform: scale(0.95);
     box-shadow: 0 0 0 0 rgba(51, 217, 178, 0.7);
@@ -50,13 +50,13 @@
   }
 }
 
-.blob.red {
+.blob.offline {
   background: rgba(255, 82, 82, 1);
   box-shadow: 0 0 0 0 rgba(255, 82, 82, 1);
-  animation: pulse-red 2s infinite;
+  animation: pulse-offline 2s infinite;
 }
 
-@keyframes pulse-red {
+@keyframes pulse-offline {
   0% {
     transform: scale(0.95);
     box-shadow: 0 0 0 0 rgba(255, 82, 82, 0.7);
