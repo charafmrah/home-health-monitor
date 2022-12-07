@@ -35,6 +35,7 @@ This is a hobby side project I worked on to build a home health monitor IoT devi
 
 - [![Next][next.js]][next-url]
 - [![React][react.js]][react-url]
+- [![TypeScript][typescript]][typescript-url]
 - [![JavaScript][javascript]][javascript-url]
 - [![Tailwind][tailwindcss.com]][tailwind-url]
 
@@ -91,7 +92,8 @@ Charaf Mrah - [@charafmrah](https://twitter.com/charafmrah) - charaf4charaf@gmai
 
 ## Acknowledgments
 
-- [Best ReadME template](https://github.com/othneildrew/Best-README-Template)
+- [Google Charts](https://developers.google.com/chart/interactive/docs)
+- [ReadME template](https://github.com/othneildrew/Best-README-Template)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -111,3 +113,5 @@ Charaf Mrah - [@charafmrah](https://twitter.com/charafmrah) - charaf4charaf@gmai
 [tailwind-url]: https://tailwindcss.com
 [javascript]: https://img.shields.io/badge/JavaScript-f7df1e?style=for-the-badge&logo=javascript&logoColor=black
 [javascript-url]: https://javascript.com
+[typescript]: https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white
+[typescript-url]: https://www.typescriptlang.org/
