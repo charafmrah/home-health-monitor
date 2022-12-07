@@ -1,7 +1,8 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
+import { fetchData } from "../utils/aws";
 import TemperatureLineChart from "../components/TemperatureLineChart";
 import HumidityLineChart from "../components/HumidityLineChart";
 import PulseDot from "../components/PulseDot";
@@ -9,6 +10,11 @@ import Switch from "@mui/material/Switch";
 
 export default function HomePage() {
   const [deviceStatus, setDeviceStatus] = useState("online");
+
+  useEffect(() => {
+    console.log("fetching data");
+    fetchData("ESP8266_Data");
+  }, []);
 
   function deviceStatusChange() {
     if (deviceStatus === "online") {

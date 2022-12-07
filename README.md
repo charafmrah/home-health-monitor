@@ -7,7 +7,7 @@
     <img src="public/logo.svg" alt="Logo" width="80" height="80">
   </a>
 
- <h3 align="center">Home Health Monitor IoT Device & application</h3>
+ <h3 align="center">Home Health Monitor IoT Device & Website</h3>
 
   <p align="center">
     A Next Js website to control & visualize data from an IoT device.
@@ -27,9 +27,12 @@
 
 ## About The Project
 
-![Product Name Screen Shot][product-screenshot]
+![Home Health Monitor Screen Shot][product-screenshot]
 
-This is a hobby side project I worked on to build a home health monitor IoT device. The device publishes sensory data to AWS IoT core and an HTTP Engine Rule saves that data to a DynamoDB. The data is then used to be visualized on the website.
+This is a side project I worked on to build a home health monitor IoT device. The device publishes sensory data to AWS IoT core and an HTTP Engine Rule saves that data to a DynamoDB. The data is then used to be visualized on the website.
+
+![](img1.jpg)![](img2.jpg)
+
 
 ### Built With
 
@@ -104,7 +107,7 @@ Charaf Mrah - [@charafmrah](https://twitter.com/charafmrah) - charaf4charaf@gmai
 [license-url]: https://github.com/charafmrah/home-health-monitor/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/charafmrah
-[product-screenshot]: public/screenshot.png
+[product-screenshot]: screenshot.png
 [next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
 [next-url]: https://nextjs.org/
 [react.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
