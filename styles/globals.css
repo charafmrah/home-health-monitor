@@ -13,11 +13,9 @@ body {
 }
 
 h1 {
-  @apply text-6xl font-bold;
+  @apply text-6xl font-bold text-center;
 }
 
 p {
   @apply text-lg font-Inter;
 }
-
-
