@@ -41,6 +41,7 @@ This is a side project I worked on to build a home health monitor IoT device. Th
 - [![TypeScript][typescript]][typescript-url]
 - [![JavaScript][javascript]][javascript-url]
 - [![Tailwind][tailwindcss.com]][tailwind-url]
+- [![AWS][aws]][aws-url] 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -118,3 +119,5 @@ Charaf Mrah - [@charafmrah](https://twitter.com/charafmrah) - charaf4charaf@gmai
 [javascript-url]: https://javascript.com
 [typescript]: https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white
 [typescript-url]: https://www.typescriptlang.org/
+[aws]: https://img.shields.io/badge/Amazon%20AWS-232F3E?style=for-the-badge&logo=amazonaws&logoColor=white
+[aws-url]: https://aws.amazon.com/
