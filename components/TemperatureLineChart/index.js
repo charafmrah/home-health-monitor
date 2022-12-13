@@ -30,8 +30,6 @@ const options = {
 const TemperatureLineChart = ({ temperatureData }) => {
   useEffect(() => {}, [temperatureData]);
 
-  console.log(data);
-
   return (
     <Chart
       chartType="LineChart"
