@@ -34,27 +34,21 @@ export default function HomePage() {
     };
 
     const awsIotConfig = new AWSIoTProvider({
-      aws_pubsub_region: process.env.NEXT_PUBLIC_NEXT_REGION,
+      aws_pubsub_region: process.env.NEXT_PUBLIC_AWS_REGION,
       aws_pubsub_endpoint: `wss://${process.env.NEXT_PUBLIC_MQTT_ID}.iot.${process.env.NEXT_PUBLIC_AWS_REGION}.amazonaws.com/mqtt`,
     });
 
     Amplify.configure(amplifyConfig);
     Amplify.addPluggable(awsIotConfig);
 
-    console.log("hello");
-    const pubsub = PubSub.subscribe("esp8266/pub").subscribe({
+    PubSub.subscribe("esp8266/pub").subscribe({
       next: (data: any) => {
-        console.log("hello");
         console.log("Message received", data);
         setData(data.value);
       },
       error: (error: any) => console.error(error),
       complete: () => console.log("Done"),
     });
-
-    return function cleanup() {
-      pubsub.unsubscribe();
-    };
   });
 
   return (
