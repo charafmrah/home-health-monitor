@@ -11,6 +11,15 @@ import { AWSIoTProvider } from "@aws-amplify/pubsub";
 
 export default function HomePage() {
   const [deviceStatus, setDeviceStatus] = useState("online");
+
+  function deviceStatusChange() {
+    if (deviceStatus === "online") {
+      setDeviceStatus("offline");
+    } else {
+      setDeviceStatus("online");
+    }
+  }
+
   const [data, setData] = useState(null);
 
   useEffect(() => {
@@ -26,7 +35,7 @@ export default function HomePage() {
 
     const awsIotConfig = new AWSIoTProvider({
       aws_pubsub_region: process.env.NEXT_PUBLIC_NEXT_REGION,
-      aws_pubsub_endpoint: `wss://${process.env.NEXT_PUBLIC_NEXT_MQTT_ID}.iot.${process.env.REACT_APP_REGION}.amazonaws.com/mqtt`,
+      aws_pubsub_endpoint: `wss://${process.env.NEXT_PUBLIC_MQTT_ID}.iot.${process.env.NEXT_PUBLIC_AWS_REGION}.amazonaws.com/mqtt`,
     });
 
     Amplify.configure(amplifyConfig);
@@ -54,7 +63,7 @@ export default function HomePage() {
       <div className="flex items-center gap-2 mt-9">
         <PulseDot color={deviceStatus} />
         <p>Device {deviceStatus}</p>
-        <Switch defaultChecked color="primary" />
+        <Switch defaultChecked color="primary" onChange={deviceStatusChange} />
       </div>
       {data}
       <TemperatureLineChart />
