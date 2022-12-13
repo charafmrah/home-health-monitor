@@ -1,13 +1,9 @@
 "use client";
 
+import { useEffect } from "react";
 import { Chart } from "react-google-charts";
 
-const data = [
-  ["Time", "Temperature"],
-  [new Date("Dec 5, 2022"), 20],
-  [new Date("Dec 6, 2022"), 22],
-  [new Date("Dec 7, 2022"), 21],
-];
+const data = [["Time", "Temperature"]];
 
 const options = {
   backgroundColor: "transparent",
@@ -31,7 +27,11 @@ const options = {
   is3D: true,
 };
 
-const TemperatureLineChart = () => {
+const TemperatureLineChart = ({ temperatureData }) => {
+  useEffect(() => {}, [temperatureData]);
+
+  console.log(data);
+
   return (
     <Chart
       chartType="LineChart"

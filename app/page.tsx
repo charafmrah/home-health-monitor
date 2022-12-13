@@ -11,6 +11,8 @@ import { AWSIoTProvider } from "@aws-amplify/pubsub";
 
 export default function HomePage() {
   const [deviceStatus, setDeviceStatus] = useState("online");
+  const [temperatureData, setTemperatureData] = useState<any[]>([]);
+  const [humidityData, setHumidityData] = useState([]);
 
   function deviceStatusChange() {
     if (deviceStatus === "online") {
@@ -19,8 +21,6 @@ export default function HomePage() {
       setDeviceStatus("online");
     }
   }
-
-  const [data, setData] = useState(null);
 
   useEffect(() => {
     const amplifyConfig = {
@@ -44,7 +44,10 @@ export default function HomePage() {
     PubSub.subscribe("esp8266/pub").subscribe({
       next: (data: any) => {
         console.log("Message received", data);
-        setData(data.value);
+        setTemperatureData((oldTemperatureData) => [
+          ...oldTemperatureData,
+          [data.value.time, data.value.temperature],
+        ]);
       },
       error: (error: any) => console.error(error),
       complete: () => console.log("Done"),
@@ -59,8 +62,7 @@ export default function HomePage() {
         <p>Device {deviceStatus}</p>
         <Switch defaultChecked color="primary" onChange={deviceStatusChange} />
       </div>
-      {data}
-      <TemperatureLineChart />
+      <TemperatureLineChart temperatureData={temperatureData} />
       <HumidityLineChart />
     </div>
   );
