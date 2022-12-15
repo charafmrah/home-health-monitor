@@ -29,7 +29,7 @@
 
 ![Home Health Monitor Screen Shot][product-screenshot]
 
-This is a side project I worked on to build a home health monitor IoT device. The device publishes sensory data to AWS IoT core and an HTTP Engine Rule saves that data to a DynamoDB. The data is then used to be visualized on the website.
+An IoT device that publishes sensory data to AWS IoT core over WiFi. The data is then routed using the   Rules Engine to a DynamoDB database. A Next.Js website acts as an MQTT client to subscribe to the events sent by the device to visualize it & control the device.
 
 ![](img1.jpg)![](img2.jpg)
 
