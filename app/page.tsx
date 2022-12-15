@@ -20,20 +20,22 @@ export default function HomePage() {
 
   function deviceStatusChange() {
     if (deviceStatus === "online") {
-      setDeviceStatus("offline");
       PubSub.publish("esp8266/sub", {
         action: "off",
-      }).catch((err) => console.log(err));
+      })
+        .then(() => setDeviceStatus("offline"))
+        .catch((err) => console.log(err));
     } else {
-      setDeviceStatus("online");
       PubSub.publish("esp8266/sub", {
         action: "on",
-      }).catch((err) => console.log(err));
+      })
+        .then(() => setDeviceStatus("online"))
+        .catch((err) => console.log(err));
     }
   }
 
   function cropData(data: any[]) {
-    if (data.length > 5) {
+    if (data.length > 3) {
       console.log(data);
       data.shift();
     }
