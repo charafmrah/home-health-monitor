@@ -31,11 +31,11 @@ const options = {
   is3D: true,
 };
 
-const HumidityLineChart = () => {
+const HumidityLineChart = ({ humidityData }) => {
   return (
     <Chart
       chartType="LineChart"
-      data={data}
+      data={humidityData}
       options={options}
       width="100%"
       height="400px"

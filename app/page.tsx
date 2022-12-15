@@ -11,8 +11,12 @@ import { AWSIoTProvider } from "@aws-amplify/pubsub";
 
 export default function HomePage() {
   const [deviceStatus, setDeviceStatus] = useState("online");
-  const [temperatureData, setTemperatureData] = useState<any[]>([]);
-  const [humidityData, setHumidityData] = useState([]);
+  const [temperatureData, setTemperatureData] = useState<any[]>([
+    ["Time", "Temperature"],
+  ]);
+  const [humidityData, setHumidityData] = useState<any[]>([
+    ["Time", "Humidity"],
+  ]);
 
   function deviceStatusChange() {
     if (deviceStatus === "online") {
@@ -46,7 +50,11 @@ export default function HomePage() {
         console.log("Message received", data);
         setTemperatureData((oldTemperatureData) => [
           ...oldTemperatureData,
-          [data.value.time, data.value.temperature],
+          [new Date(data.value.time), data.value.temperature],
+        ]);
+        setHumidityData((oldHumidityData) => [
+          ...oldHumidityData,
+          [new Date(data.value.time), data.value.humidity],
         ]);
       },
       error: (error: any) => console.error(error),
@@ -62,8 +70,12 @@ export default function HomePage() {
         <p>Device {deviceStatus}</p>
         <Switch defaultChecked color="primary" onChange={deviceStatusChange} />
       </div>
-      <TemperatureLineChart temperatureData={temperatureData} />
-      <HumidityLineChart />
+      {temperatureData.length > 1 && (
+        <TemperatureLineChart temperatureData={temperatureData} />
+      )}
+      {humidityData.length > 1 && (
+        <HumidityLineChart humidityData={humidityData} />
+      )}
     </div>
   );
 }
