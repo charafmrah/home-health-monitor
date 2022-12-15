@@ -32,6 +32,12 @@ export default function HomePage() {
     }
   }
 
+  function cropData(data: any[]) {
+    if (data.length > 60) {
+      data.shift();
+    }
+  }
+
   useEffect(() => {
     const amplifyConfig = {
       Auth: {
@@ -54,6 +60,10 @@ export default function HomePage() {
     PubSub.subscribe("esp8266/pub").subscribe({
       next: (data: any) => {
         console.log("Message received", data);
+
+        cropData(temperatureData);
+        cropData(humidityData);
+
         setTemperatureData((oldTemperatureData) => [
           ...oldTemperatureData,
           [new Date(data.value.time), data.value.temperature],
