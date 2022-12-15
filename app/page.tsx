@@ -33,9 +33,11 @@ export default function HomePage() {
   }
 
   function cropData(data: any[]) {
-    if (data.length > 60) {
+    if (data.length > 5) {
+      console.log(data);
       data.shift();
     }
+    return data;
   }
 
   useEffect(() => {
@@ -59,18 +61,16 @@ export default function HomePage() {
 
     PubSub.subscribe("esp8266/pub").subscribe({
       next: (data: any) => {
-        console.log("Message received", data);
-
-        cropData(temperatureData);
-        cropData(humidityData);
+        setTemperatureData(cropData(temperatureData));
+        setHumidityData(cropData(humidityData));
 
         setTemperatureData((oldTemperatureData) => [
           ...oldTemperatureData,
-          [new Date(data.value.time), data.value.temperature],
+          [new Date(), data.value.temperature],
         ]);
         setHumidityData((oldHumidityData) => [
           ...oldHumidityData,
-          [new Date(data.value.time), data.value.humidity],
+          [new Date(), data.value.humidity],
         ]);
       },
       error: (error: any) => console.error(error),

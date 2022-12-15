@@ -2,13 +2,6 @@
 
 import { Chart } from "react-google-charts";
 
-const data = [
-  ["Time", "Humidity"],
-  [new Date("Dec 5, 2022"), 67],
-  [new Date("Dec 6, 2022"), 65],
-  [new Date("Dec 7, 2022"), 57],
-];
-
 const options = {
   backgroundColor: "transparent",
 
