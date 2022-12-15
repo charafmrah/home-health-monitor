@@ -21,8 +21,14 @@ export default function HomePage() {
   function deviceStatusChange() {
     if (deviceStatus === "online") {
       setDeviceStatus("offline");
+      PubSub.publish("esp8266/sub", {
+        action: "off",
+      }).catch((err) => console.log(err));
     } else {
       setDeviceStatus("online");
+      PubSub.publish("esp8266/sub", {
+        action: "on",
+      }).catch((err) => console.log(err));
     }
   }
 
