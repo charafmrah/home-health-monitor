@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 
 import TemperatureLineChart from "../components/TemperatureLineChart";
 import HumidityLineChart from "../components/HumidityLineChart";
-import DeviceControl from "../components/DeviceControl/DeviceControl";
+import DeviceControl from "../components/DeviceControl/DeviceControl.js";
 import { Amplify, PubSub } from "aws-amplify";
 import { AWSIoTProvider } from "@aws-amplify/pubsub";
 
