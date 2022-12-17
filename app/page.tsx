@@ -4,15 +4,14 @@ import React, { useState, useEffect } from "react";
 
 import TemperatureLineChart from "../components/TemperatureLineChart";
 import HumidityLineChart from "../components/HumidityLineChart";
-import PulseDot from "../components/PulseDot";
-import Switch from "@mui/material/Switch";
+import DeviceControl from "../components/DeviceControl/DeviceControl";
 import { Amplify, PubSub } from "aws-amplify";
 import { AWSIoTProvider } from "@aws-amplify/pubsub";
 
 export default function HomePage() {
   const [deviceStatus, setDeviceStatus] = useState("online");
-  const [temperatureData, setTemperatureData] = useState<any[] | null>(null);
-  const [humidityData, setHumidityData] = useState<any[] | null>(null);
+  const [temperatureData, setTemperatureData] = useState<any[]>([]);
+  const [humidityData, setHumidityData] = useState<any[]>([]);
 
   function deviceStatusChange() {
     if (deviceStatus === "online") {
@@ -63,7 +62,7 @@ export default function HomePage() {
         setHumidityData(cropData(humidityData));
 
         setTemperatureData((oldTemperatureData) => [
-          ...oldTemperatureData?,
+          ...oldTemperatureData,
           [new Date(), data.value.temperature],
         ]);
         setHumidityData((oldHumidityData) => [
@@ -78,11 +77,10 @@ export default function HomePage() {
 
   return (
     <div className="flex flex-col items-center">
-      <div className="flex items-center gap-2 mb-10">
-        <PulseDot color={deviceStatus} />
-        <p>Device {deviceStatus}</p>
-        <Switch defaultChecked color="primary" onChange={deviceStatusChange} />
-      </div>
+      <DeviceControl
+        deviceStatus={deviceStatus}
+        deviceStatusChange={deviceStatusChange}
+      />
       {temperatureData.length > 1 && (
         <TemperatureLineChart temperatureData={temperatureData} />
       )}
