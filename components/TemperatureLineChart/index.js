@@ -1,38 +1,72 @@
 "use client";
 
-import { useEffect } from "react";
-import { Chart } from "react-google-charts";
+import { useState } from "react";
+import Chart from "react-apexcharts";
 
-const options = {
-  backgroundColor: "transparent",
-
-  colors: ["#e0440e", "#e6693e", "#ec8f6e", "#f3b49f", "#f6c7b6"],
-
-  hAxis: {
-    textStyle: { color: "#FFF" },
+const [options, setOptions] = useState({
+  chart: {
+    type: "area",
+    stacked: false,
+    height: 350,
+    zoom: {
+      type: "x",
+      enabled: true,
+      autoScaleYaxis: true,
+    },
+    toolbar: {
+      autoSelected: "zoom",
+    },
   },
-  vAxis: {
-    title: "Temperature (C)",
-    titleTextStyle: { color: "#FFF" },
-    textStyle: { color: "#FFF" },
-    minValue: -10,
+  dynamicAnimation: {
+    enabled: false,
   },
-  legend: {
-    textStyle: { color: "#FFF" },
-    position: "bottom",
+  dataLabels: {
+    enabled: false,
   },
-  curveType: "function",
-  is3D: true,
-};
+  markers: {
+    size: 0,
+  },
+  title: {
+    text: "Temperature over time",
+    align: "left",
+  },
+  fill: {
+    type: "gradient",
+    gradient: {
+      shadeIntensity: 1,
+      inverseColors: false,
+      opacityFrom: 0.5,
+      opacityTo: 0,
+      stops: [0, 90, 100],
+    },
+  },
+  yaxis: {
+    title: {
+      text: "Temperature °C",
+    },
+  },
+  xaxis: {
+    type: "datetime",
+  },
+  tooltip: {
+    shared: false,
+  },
+});
 
 const TemperatureLineChart = ({ temperatureData }) => {
+  const [series] = [
+    {
+      name: "Temperature",
+      data: temperatureData,
+    },
+  ];
   return (
     <Chart
-      chartType="LineChart"
-      data={temperatureData}
       options={options}
-      width="100%"
-      height="400px"
+      series={series}
+      type="area"
+      width="1000"
+      height="300"
     />
   );
 };

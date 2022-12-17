@@ -11,12 +11,8 @@ import { AWSIoTProvider } from "@aws-amplify/pubsub";
 
 export default function HomePage() {
   const [deviceStatus, setDeviceStatus] = useState("online");
-  const [temperatureData, setTemperatureData] = useState<any[]>([
-    ["Time", "Temperature"],
-  ]);
-  const [humidityData, setHumidityData] = useState<any[]>([
-    ["Time", "Humidity"],
-  ]);
+  const [temperatureData, setTemperatureData] = useState<any[] | null>(null);
+  const [humidityData, setHumidityData] = useState<any[] | null>(null);
 
   function deviceStatusChange() {
     if (deviceStatus === "online") {
@@ -35,7 +31,7 @@ export default function HomePage() {
   }
 
   function cropData(data: any[]) {
-    if (data.length > 3) {
+    if (data.length > 10) {
       console.log(data);
       data.shift();
     }
@@ -67,7 +63,7 @@ export default function HomePage() {
         setHumidityData(cropData(humidityData));
 
         setTemperatureData((oldTemperatureData) => [
-          ...oldTemperatureData,
+          ...oldTemperatureData?,
           [new Date(), data.value.temperature],
         ]);
         setHumidityData((oldHumidityData) => [
@@ -82,8 +78,7 @@ export default function HomePage() {
 
   return (
     <div className="flex flex-col items-center">
-      <h1>Home Health Monitor</h1>
-      <div className="flex items-center gap-2 mt-9">
+      <div className="flex items-center gap-2 mb-10">
         <PulseDot color={deviceStatus} />
         <p>Device {deviceStatus}</p>
         <Switch defaultChecked color="primary" onChange={deviceStatusChange} />
