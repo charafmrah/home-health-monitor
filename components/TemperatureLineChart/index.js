@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Chart from "react-apexcharts";
+import ReactApexChart from "react-apexcharts";
 
 const TemperatureLineChart = ({ temperatureData }) => {
   const [options, setOptions] = useState({
@@ -60,7 +60,7 @@ const TemperatureLineChart = ({ temperatureData }) => {
     },
   ];
   return (
-    <Chart
+    <ReactApexChart
       options={options}
       series={series}
       type="area"
