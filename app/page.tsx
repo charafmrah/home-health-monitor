@@ -30,7 +30,7 @@ export default function HomePage() {
   }
 
   function cropData(data: any[]) {
-    if (data.length > 10) {
+    if (data.length > 60) {
       console.log(data);
       data.shift();
     }

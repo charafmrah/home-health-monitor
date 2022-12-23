@@ -53,12 +53,12 @@ const TemperatureLineChart = ({ temperatureData }) => {
       shared: false,
     },
   });
-  const [series] = [
+  const [series, useSeries] = useState([
     {
       name: "Temperature",
       data: temperatureData,
     },
-  ];
+  ]);
   return (
     <ReactApexChart
       options={options}
