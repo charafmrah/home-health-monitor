@@ -27,7 +27,7 @@
 
 ## About The Project
 
-![Home Health Monitor Screen Shot][product-screenshot]
+![Home Health Monitor Screen Shot][product-screenshot-1]
 
 An IoT device that publishes sensory data to AWS IoT core over WiFi. The data is then routed using the   Rules Engine to a DynamoDB database. A Next.Js website acts as an MQTT client to subscribe to the events sent by the device to visualize it & control the device.
 
@@ -88,7 +88,7 @@ Don't forget to give the project a star! Thanks again!
 
 ## Contact
 
-Charaf Mrah - [@charafmrah](https://twitter.com/charafmrah) - charaf4charaf@gmail.com
+Charaf Mrah - [LinkedIn](https://linkedin.com/in/charafmrah) - [@charafmrah](https://twitter.com/charafmrah) - charaf4charaf@gmail.com
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -104,11 +104,9 @@ Charaf Mrah - [@charafmrah](https://twitter.com/charafmrah) - charaf4charaf@gmai
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
-[license-shield]: https://img.shields.io/github/license/charafmrah/home-health-monitor.svg?style=for-the-badge
-[license-url]: https://github.com/charafmrah/home-health-monitor/LICENSE.txt
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/charafmrah
-[product-screenshot]: screenshot.png
+[product-screenshot-1]: screenshot1.png
+[product-screenshot-2]: screenshot2.png
 [next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
 [next-url]: https://nextjs.org/
 [react.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
