@@ -4,7 +4,7 @@ import { useState } from "react";
 import ReactApexChart from "react-apexcharts";
 
 const TemperatureLineChart = ({ temperatureData }) => {
-  const [options, setOptions] = useState({
+  const [options] = useState({
     chart: {
       type: "area",
       stacked: false,
@@ -53,7 +53,7 @@ const TemperatureLineChart = ({ temperatureData }) => {
       shared: false,
     },
   });
-  const [series, useSeries] = useState([
+  const [series] = useState([
     {
       name: "Temperature",
       data: temperatureData,

@@ -4,7 +4,7 @@ import { useState } from "react";
 import ReactApexChart from "react-apexcharts";
 
 const HumidityLineChart = ({ humidityData }) => {
-  const [options, setOptions] = useState({
+  const [options] = useState({
     chart: {
       type: "area",
       stacked: false,
@@ -54,7 +54,7 @@ const HumidityLineChart = ({ humidityData }) => {
     },
   });
 
-  const [series, setSeries] = useState([
+  const [series] = useState([
     {
       name: "Humidity",
       data: humidityData,
