@@ -60,13 +60,17 @@ const TemperatureLineChart = ({ temperatureData }) => {
     },
   ]);
   return (
-    <ReactApexChart
-      options={options}
-      series={series}
-      type="area"
-      width="1000"
-      height="300"
-    />
+    <>
+      {typeof window !== "undefined" && (
+        <ReactApexChart
+          options={options}
+          series={series}
+          type="area"
+          width="1000"
+          height="300"
+        />
+      )}
+    </>
   );
 };
 

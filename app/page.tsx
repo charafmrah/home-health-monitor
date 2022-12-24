@@ -58,6 +58,7 @@ export default function HomePage() {
 
     PubSub.subscribe("esp8266/pub").subscribe({
       next: (data: any) => {
+        console.log(data.value);
         setTemperatureData(cropData(temperatureData));
         setHumidityData(cropData(humidityData));
 
